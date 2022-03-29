@@ -28,7 +28,7 @@
 			}
 			
 			a:hover {
-				color: grey;
+				color: initial;
 			}
 			
 			ul {
@@ -50,18 +50,32 @@
 			}
 
 			aside ul li {
+				font-weight: bold;
 				text-transform: capitalize;
-				line-height: 2em;
-				background-color: grey;
+				line-height: 3em;
+				background-color: rgba(245, 245, 245, 1.0);
+			}
+			
+			aside ul li:last-child {
+				border-bottom: solid 1px var(--border);
 			}
 			
 			aside ul li a {
 				display: block;
 				padding-left: 5px;
+				transition: all 200ms;
+			}
+
+			aside ul li a:hover {
+				/* padding-left: 15px; */
+				border-left: solid 10px lightgrey ;
+				font-size: 1.5em;
+				background-color: rgba(240, 240, 240, 1.0);
 			}
 
 			aside ul li > ul li {
-				background-color: yellow;
+				font-weight: initial;
+				background-color: rgba(245, 245, 245, 1.0);
 			}
 
 			section {
@@ -72,14 +86,14 @@
 				border: solid 1px var(--border);
 			}
 
-			section .imagewrapper {
+			section div {
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: center;
 				align-items: center;
 			}
 			
-			.imagewrapper img {
+			div img {
 				height: 150px;
 				width: 150px;
 				margin: .4em;
@@ -88,7 +102,7 @@
 				transition: all 400ms;
 			}
 
-			.imagewrapper img:hover {
+			div img:hover {
 				transform: translate(0, -5px);
 				box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.3);
 				transform: scale(1.1);
@@ -126,11 +140,11 @@
 		</aside>
 
 		<h1>Guia Med</h1>
-		<p>Utilize a Barra Lateral para navegar pelo conteudo de cada bloco</p>
+		<p>Utilize a Barra Lateral para navegar pelo conteudo de cada bloco operatório.</p>
 
 		<section id="seccao1">
 			<h2>Secção 1</h2>
-			<div class="imagewrapper">
+			<div>
 				<img src="https://via.placeholder.com/150/fff" alt="">
 				<img src="https://via.placeholder.com/150/fff" alt="">
 				<img src="https://via.placeholder.com/150/fff" alt="">
@@ -145,19 +159,19 @@
 		</section>
 		<section id="seccao2">
 			<h2>Secção 2</h2>
-			<div class="imagewrapper"><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""></div>
+			<div><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""></div>
 		</section>
 		<section id="seccao3">
 			<h2>Secção 3</h2>
-			<div class="imagewrapper"><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""></div>
+			<div><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""></div>
 		</section>
 		<section id="seccao4">
 			<h2>Secção 4</h2>
-			<div class="imagewrapper"><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""></div>
+			<div><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""></div>
 		</section>
 		<section id="seccao5">
 			<h2>Secção 5</h2>
-			<div class="imagewrapper"><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""></div>
+			<div><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""><img src="https://via.placeholder.com/150/fff" alt=""></div>
 		</section>
 
 		<div id="fullscreen" style="display: none;"></div>
