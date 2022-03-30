@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="">
 		<style>
 			:root {
-				--division: 15%;
+				--division: 10%;
 				--border: rgba(200, 200, 200, 0.3);
 			}
 
@@ -50,6 +50,7 @@
 			}
 
 			aside ul li {
+				border-top: solid 1px lightgrey;
 				font-weight: bold;
 				text-transform: capitalize;
 				line-height: 3em;
@@ -63,19 +64,23 @@
 			aside ul li a {
 				display: block;
 				padding-left: 5px;
-				transition: all 200ms;
+				/* transition: all 200ms; */
 			}
 
 			aside ul li a:hover {
 				/* padding-left: 15px; */
 				border-left: solid 10px lightgrey ;
-				font-size: 1.5em;
-				background-color: rgba(240, 240, 240, 1.0);
+				/* font-size: 1.5em; */
+				/* background-color: rgba(240, 240, 240, 1.0); */
+			}
+
+			aside ul li > ul {
+				display: none;
 			}
 
 			aside ul li > ul li {
 				font-weight: initial;
-				background-color: rgba(245, 245, 245, 1.0);
+				background-color: rgba(240, 240, 240, 1.0);
 			}
 
 			section {
@@ -176,19 +181,22 @@
 
 		<div id="fullscreen" style="display: none;"></div>
 		<script>
-			// document.getElementById("myBtn").addEventListener("click", displayDate);
+			var items = document.getElementsByTagName("li");
 
-			/*const $items = [
-				'ITEM1' = {
+			for (var i = 0; i < items.length; i++) {
+				var item = items[i];
 
-				}
-			]
+				item.addEventListener("click", function() {
+					var subList = this.getElementsByTagName("ul");
 
-			for (const item of items) {
-				console.log(item);
-			} */
+					console.log(subList.length)
+
+					if (subList.length > 0) 
+						subList[0].style.display = subList[0].style.display === "block" ? "none" : "block";
+				});
+			}
 			
-			function SetFullscreen(image)
+			/* function SetFullscreen(image)
 			{
 				console.log('Image Source: ', image)
 			}
@@ -199,7 +207,7 @@
 				var img = img_all[i];
 
 				img.addEventListener("click", SetFullscreen(i))
-			}
+			} */
 
 			
 		</script>
