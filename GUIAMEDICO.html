@@ -54,7 +54,7 @@
 				font-weight: bold;
 				text-transform: capitalize;
 				line-height: 3em;
-				background-color: rgba(245, 245, 245, 1.0);
+				background-color: rgba(245, 245, 245, 0.5);
 			}
 			
 			aside ul li:last-child {
@@ -68,10 +68,8 @@
 			}
 
 			aside ul li a:hover {
-				/* padding-left: 15px; */
 				border-left: solid 10px lightgrey ;
 				/* font-size: 1.5em; */
-				/* background-color: rgba(240, 240, 240, 1.0); */
 			}
 
 			aside ul li > ul {
@@ -80,7 +78,7 @@
 
 			aside ul li > ul li {
 				font-weight: initial;
-				background-color: rgba(240, 240, 240, 1.0);
+				background-color: rgba(245, 245, 245, .7);
 			}
 
 			section {
@@ -111,6 +109,15 @@
 				/* transform: translate(0, -5px); */
 				box-shadow: 0 0 200px 0 rgba(0, 0, 0, 0.3);
 				transform: scale(1.1);
+			}
+
+			.tag {
+				padding: 3px 5px;
+				border-radius: 3px;
+				box-shadow: 1px 1px 1px 1px rgb(0 0 0 / 10%);
+				margin-right: 5px;
+				border: solid 1px grey;
+				float: right;
 			}
 		</style>
 	</head>
@@ -148,6 +155,8 @@
 		<p>Utilize a Barra Lateral para navegar pelo conteudo de cada bloco operatório.</p>
 
 		<section id="seccao1">
+			<span class="tag">Tag 1</span><span class="tag">Tag 2</span><span class="tag">Tag 3</span><span class="tag">Tag 4</span><span class="tag">Tag 5</span><span class="tag">Tag 6</span>
+
 			<h2>Secção 1</h2>
 			<div>
 				<img src="https://via.placeholder.com/150/fff" alt="">
@@ -181,6 +190,8 @@
 
 		<div id="fullscreen" style="display: none;"></div>
 		<script>
+
+
 			var items = document.getElementsByTagName("li");
 
 			for (var i = 0; i < items.length; i++) {
