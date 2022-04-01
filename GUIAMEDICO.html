@@ -112,6 +112,7 @@
 			}
 
 			.tag {
+				color: white;
 				padding: 3px 5px;
 				border-radius: 3px;
 				box-shadow: 1px 1px 1px 1px rgb(0 0 0 / 10%);
@@ -124,7 +125,7 @@
 	<body>
 		<aside>
 			<ul>
-				<li>
+				<!-- <li>
 					<a href="#item1">Item 1</a>
 					<ul>
 						<li><a href="#subitem1">sub Item 1</a></li>
@@ -147,7 +148,7 @@
 				<li><a href="#item7">Item 7</a></li>
 				<li><a href="#item8">Item 8</a></li>
 				<li><a href="#item9">Item 9</a></li>
-				<li><a href="#item10">Item 10</a></li>
+				<li><a href="#item10">Item 10</a></li> -->
 			</ul>
 		</aside>
 
@@ -155,7 +156,7 @@
 		<p>Utilize a Barra Lateral para navegar pelo conteudo de cada bloco operatório.</p>
 
 		<section id="seccao1">
-			<span class="tag">Tag 1</span><span class="tag">Tag 2</span><span class="tag">Tag 3</span><span class="tag">Tag 4</span><span class="tag">Tag 5</span><span class="tag">Tag 6</span>
+			<!-- <span class="tag">wettgwrgwrgwrg 1</span><span class="tag">sfeffefedfwadad 2</span><span class="tag">awdwfegrghthtj 3</span><span class="tag">fdgfhdh 4</span><span class="tag">erteyikhljm 5</span><span class="tag">gmhmmkjguku 6</span> -->
 
 			<h2>Secção 1</h2>
 			<div>
@@ -190,8 +191,84 @@
 
 		<div id="fullscreen" style="display: none;"></div>
 		<script>
+			var menuItems = ["menu 1", "menu 2", "menu 3"];
 
+			// Create Sidebar Menu Entry
+			function CreateMenuEntry(text, id)
+			{
+				var listItem = document.createElement('li');
+				var anchor = document.createElement('a');
 
+				anchor.href = '#' + id;
+				anchor.innerHTML = text;
+				listItem.append(anchor);
+
+				return listItem;
+			}
+
+			// Create Card Tag
+			function CreateTag(text)
+			{
+				// Generate background color according to text
+				var hash = 0;
+				var colour = '#';
+
+				for (var i = 0; i < text.length; i++)
+					hash = text.charCodeAt(i) + ((hash << 5) - hash);
+					
+				for (var i = 0; i < 3; i++) {
+					var value = (hash >> (i * 8)) & 0xFF;
+					colour += ('00' + value.toString(16)).substr(-2);
+				}
+
+				var tag = document.createElement('span');
+					
+				tag.className = 'tag';
+				tag.innerText = text;
+				tag.style.background = colour;
+
+				return tag
+			}
+
+			// Create Information Card
+			function CreateCard(title, images, tags)
+			{
+				var card = document.createElement('section');
+
+				// Create Tags
+				for (let index = 0; index < tags.length; index++) {
+					console.log(tags[index]);
+					card.append(CreateTag(tags[index]));
+				}
+
+				// Create Title H1
+				var heading = document.createElement('H1');
+				heading.innerText = title;
+				// heading.appendChild(document.createTextNode(title))
+				card.append(heading);
+
+				// Create Images
+
+				document.getElementsByTagName('body')[0].appendChild(card)
+			}
+
+			// Generate Sidebar Menu
+			for (i = 0; i < menuItems.length; i++) {
+				document.querySelector('aside ul').appendChild(CreateMenuEntry(menuItems[i], 'id' + i));
+
+				CreateCard(menuItems[i], null, ['tagdfsdffs', 'tagsdasgrgrsg'])
+			}
+
+			// Apply color to tags according to their string
+			/* const tags = document.getElementsByClassName("tag");
+
+			for (let index = 0; index < tags.length; index++) {
+				const tag = tags[index];
+
+				tag.style.background = stringToColour(tag.textContent);
+			} */
+
+			// Sidebar Menu Collapse functionality
 			var items = document.getElementsByTagName("li");
 
 			for (var i = 0; i < items.length; i++) {
@@ -206,6 +283,8 @@
 						subList[0].style.display = subList[0].style.display === "block" ? "none" : "block";
 				});
 			}
+
+			
 			
 			/* function SetFullscreen(image)
 			{
