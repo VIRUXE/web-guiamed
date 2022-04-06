@@ -21,6 +21,11 @@ a:hover {
     color: initial;
 }
 
+h1 {
+    margin-top: 0;
+    margin-bottom: .4em;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -79,14 +84,18 @@ section {
     border: solid 1px var(--border);
 }
 
-section div {
+section .images {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-div img {
+.images {
+    margin-top: 1em;
+}
+
+.images img {
     height: 150px;
     width: 150px;
     margin: .4em;
@@ -95,18 +104,27 @@ div img {
     transition: all 400ms;
 }
 
-div img:hover {
+.images img:hover {
     /* transform: translate(0, -5px); */
     box-shadow: 0 0 200px 0 rgba(0, 0, 0, 0.3);
     transform: scale(1.1);
 }
 
-.tag {
+.crumb {
     color: white;
     padding: 3px 5px;
     border-radius: 3px;
     box-shadow: 1px 1px 1px 1px rgb(0 0 0 / 10%);
-    margin-right: 5px;
+    /* margin-right: 5px; */
     border: solid 1px grey;
-    float: right;
+    /* float: right; */
+}
+
+#fullscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

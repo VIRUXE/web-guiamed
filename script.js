@@ -1,3 +1,5 @@
+var breadcrumbs = [];
+
 // Create Sidebar Menu Entry
 function CreateMenuEntry(text, id)
 {
@@ -11,68 +13,88 @@ function CreateMenuEntry(text, id)
 	return listItem;
 }
 
-// Create Card Tag
-function CreateTag(text)
-{
-	// Generate background color according to text
-	var hash = 0;
-	var colour = '#';
-
-	for (var i = 0; i < text.length; i++)
-		hash = text.charCodeAt(i) + ((hash << 5) - hash);
-		
-	for (var i = 0; i < 3; i++) {
-		var value = (hash >> (i * 8)) & 0xFF;
-		colour += ('00' + value.toString(16)).substr(-2);
-	}
-
-	var tag = document.createElement('span');
-		
-	tag.className = 'tag';
-	tag.innerText = text;
-	tag.style.background = colour;
-
-	return tag
-}
-
 // Create Information Card
-function CreateCard(title, images, tags)
+function CreateCard(cardId, cardTitle, cardImages)
 {
+	if(cardImages == undefined) return;
+	
 	var card = document.createElement('section');
 
-	// Create Tags
-	for (var index = 0; index < tags.length; index++)
-		card.append(CreateTag(tags[index]));
-
+	var imagePath = '';
+	
 	// Create Title H1
 	var heading = document.createElement('H1');
-	heading.innerText = title;
-	// heading.appendChild(document.createTextNode(title))
+	heading.innerText = cardTitle;
 	card.append(heading);
+	
+	// List Breadcrumbs if we're in a nested level
+	if(breadcrumbs.length > 0)
+	{
+		var breadcrumbWrapper = document.createElement('div');
+
+		// imagePath += '/';
+		for (var index = 0; index < breadcrumbs.length; index++)
+		{
+			imagePath += breadcrumbs[index].id + '/';
+
+			// Generate background color for breadcrumb according to text
+			var hash = 0;
+			var colour = '#';
+			var text = breadcrumbs[index].title;
+
+			for (var i = 0; i < text.length; i++)
+			hash = text.charCodeAt(i) + ((hash << 5) - hash);
+			
+			for (var i = 0; i < 3; i++) {
+				var value = (hash >> (i * 8)) & 0xFF;
+				colour += ('00' + value.toString(16)).substr(-2);
+			}
+
+			var crumb = document.createElement('span');
+			
+			crumb.className = 'crumb';
+			crumb.innerText = text;
+			crumb.style.background = colour;
+
+			breadcrumbWrapper.append(crumb);
+
+			if(index != breadcrumbs.length-1) breadcrumbWrapper.appendChild(document.createTextNode('→'));
+		}
+		card.append(breadcrumbWrapper);
+	}
+	imagePath += cardId;
 
 	// Create Images
+	if(cardImages?.length) {
 
+		var imagesWrapper = document.createElement('div');
+		imagesWrapper.className = 'images';
+
+		for (let index = 0; index < cardImages.length; index++) {
+			const image = cardImages[index];
+
+			var img = document.createElement('img');
+			var src = basePath + imagePath + '/' + image.name;
+			// console.log(src);
+			img.src = src;
+			if(image?.title) img.title = image.title;
+
+			imagesWrapper.append(img);
+		}	
+		card.append(imagesWrapper);
+	}
+	
 	document.getElementsByTagName('body')[0].appendChild(card)
 }
 
 // Generate Sidebar Menu
-for (i = 0; i < data.length; i++) {
+/* for (i = 0; i < data.length; i++) {
 	document.querySelector('aside ul').appendChild(CreateMenuEntry(data[i], 'id' + i));
 
-	CreateCard(data[i], null, ['tagdfsdffs', 'tagsdasgrgrsg'])
-}
-
-// Apply color to tags according to their string
-/* const tags = document.getElementsByClassName("tag");
-
-for (let index = 0; index < tags.length; index++) {
-	const tag = tags[index];
-
-	tag.style.background = stringToColour(tag.textContent);
 } */
 
 // Sidebar Menu Collapse functionality
-var items = document.getElementsByTagName("li");
+/* var items = document.getElementsByTagName("li");
 
 for (var i = 0; i < items.length; i++) {
 	var item = items[i];
@@ -85,7 +107,7 @@ for (var i = 0; i < items.length; i++) {
 		if (subList.length > 0) 
 			subList[0].style.display = subList[0].style.display === "block" ? "none" : "block";
 	});
-}
+} */
 
 
 
@@ -101,3 +123,35 @@ for (i=0; i< img_all.length; i++){
 
 	img.addEventListener("click", SetFullscreen(i))
 } */
+
+// Generate Cards from given array
+function ScanLevel(cards) {
+	cards.forEach(card => {
+		CreateCard(card.id, card.title, card.images);
+		
+		// Check for more cards
+		if(card?.folders) {
+			// Add breadcrumb
+			breadcrumbs.push({id: card.id, title: card.title});
+			ScanLevel(card.folders);
+		}
+	});
+}
+
+/* 
+	Initialize card scanning.
+
+	Delete breadcrumbs when iterating first level cards
+*/
+cardData.forEach(card => {
+	breadcrumbs = [];
+
+	CreateCard(card.id, card.title, card.images);
+
+	if(card?.folders) {
+		breadcrumbs.push({id: card.id, title: card.title});
+		ScanLevel(card.folders, card.title);
+	}
+	
+	console.log(breadcrumbs);
+});
