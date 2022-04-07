@@ -1,4 +1,4 @@
-const basePath = 'D:/Downloads/med/';
+const basePath = 'assets/';
 
 const cardData = [
 	{
@@ -9,7 +9,7 @@ const cardData = [
 				id: 'DESCONTAMINAÇÃO',
 				title: 'Descontaminação',
 				images: [
-					{title: 'Tooltip Test', name: 'Filtros Bomba Leite.JPG'},
+					{title: 'Filtros de Bomba para Leite', name: 'Filtros Bomba Leite.JPG'},
 					{title: 'Tooltip Test', name: 'Kit Fisiatria.JPG'},
 					{title: 'Tooltip Test', name: 'Sonda Temperatura.JPG'}
 				],
