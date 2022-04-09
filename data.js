@@ -1,6 +1,6 @@
 const basePath = 'assets/';
 
-const cardData = [
+const imgData = [
 	{
 		id: 'Informacoes',
 		title: 'Informações',
@@ -12,8 +12,7 @@ const cardData = [
 					{title: 'Filtros de Bomba para Leite', name: 'Filtros Bomba Leite.JPG'},
 					{title: 'Tooltip Test', name: 'Kit Fisiatria.JPG'},
 					{title: 'Tooltip Test', name: 'Sonda Temperatura.JPG'}
-				],
-				folders: []
+				]
 			}
 		]
 	},
@@ -21,7 +20,7 @@ const cardData = [
 		id: 'MaterialAmbulatorio',
 		title: 'Ambulatório',
 		images: [
-			{title: 'Tooltip Test', name: 'MICRO MOTOR.JPG'}
+			{title: 'Ambulatório Tip', name: 'MICRO MOTOR.JPG'}
 		],
 		folders: [
 			{
