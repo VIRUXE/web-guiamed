@@ -68,14 +68,8 @@ nav ul li a:hover {
 	text-transform: uppercase;
 }
 
-/* #voltar {
-	display: none;
-	text-transform: uppercase;
-	font-weight: bold;
-} */
-
 main {
-	flex-direction: column;
+	flex-wrap: wrap;
 	display: flex;
 	align-items: center;
 	justify-content: center;
