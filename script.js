@@ -1,15 +1,26 @@
 var currFolder = imgData;
-var prevFolder = null;
 
-// Create Sidebar Menu Entry
 function CreateMenuItem(id, title)
 {
 	var listItem = document.createElement('li');
 	var anchor = document.createElement('a');
 
+	// Generate background color for breadcrumb according to text
+	var hash = 0;
+	var colour = '#';
+
+	for (var i = 0; i < title.length; i++)
+	hash = title.charCodeAt(i) + ((hash << 5) - hash);
+	
+	for (var i = 0; i < 3; i++) {
+		var value = (hash >> (i * 8)) & 0xFF;
+		colour += ('00' + value.toString(16)).substr(-2);
+	}
+
 	anchor.id = id;
 	anchor.href = '#' + id;
 	anchor.innerHTML = title;
+	anchor.style.backgroundColor = colour;
 	listItem.append(anchor);
 
 	return listItem;
@@ -37,8 +48,6 @@ function Navigate(toFolder) {
 	var current = document.getElementById('current');
 	var previous = document.getElementById('previous');
 
-	// previous.style.display = currFolder !== imgData ? 'inline-block' : 'none';
-
 	for (var index = 0; index < currFolder.length; index++) {
 		const item 		= currFolder[index];
 		const itemId 	= item.id.toLowerCase();
@@ -47,10 +56,10 @@ function Navigate(toFolder) {
 			// Regenerate the menu for the folders inside the current folder
 			if(item?.folders)
 				GenerateMenu(item.folders);
-			else
+			else // Or delete the menu if no folders to go to
 				document.querySelector('nav ul').replaceChildren();
 
-			// Now Show the images in the folders if there is any
+			// Now Show the images in the folders if there are any
 			if(item?.images) {
 				item.images.forEach(image => {
 					var img = document.createElement('img');
@@ -81,7 +90,6 @@ function Navigate(toFolder) {
 			previous.textContent = current.textContent;
 			current.textContent = item.title;
 
-			prevFolder = currFolder;
 			currFolder = item.folders;
 
 			break;
