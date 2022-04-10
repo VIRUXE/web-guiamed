@@ -1,4 +1,4 @@
-const basePath = 'assets/';
+const basePath = 'assets';
 
 const imgData = [
 	{
@@ -84,7 +84,7 @@ const imgData = [
 				]
 			},
 			{
-				id: 'CIRURGIA_PLASTICA',
+				id: 'CIRURGIA PLASTICA',
 				title: 'Cirurgia Plástica',
 				images: [
 					{title: 'Tooltip Test', name: 'BASE METALICA 3 UNIDADES.JPG'},
@@ -199,10 +199,176 @@ const imgData = [
 	{
 		id: 'MaterialBlocoCentral',
 		title: 'Bloco Central',
-		images: [
-			{title: 'Tooltip Test', name: 'MICRO MOTOR.JPG'}
-		],
-		folders: []
+		folders: [
+			{
+				id: 'ANESTESIA',
+				title: 'Anestesia',
+				images: [
+					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
+					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
+				]
+			},
+			{
+				id: 'CIRURGIA GERAL',
+				title: 'Cirurgia Geral',
+				images: [
+					{title: 'Kit de Amputação', name: 'Kit Amputação.jpg'}
+				],
+				folders: [
+					{
+						id: 'AFASTADOR BOOK WALTER',
+						title: 'Book Walter',
+						images: [
+							{title: 'Cabo de Temperatura', name: 'Afastador Peças.jpg'},
+							{title: 'Sonda de Temperatura', name: 'CX AFASTADOR BOOK WALTER.JPG'}
+						]
+					},
+					{
+						id: 'CIRURGIA ABDOMINAL 6cx',
+						title: 'Cirurgia Abdominal',
+						images: [
+							{title: 'Sonda de Temperatura', name: 'Cx Abdominal 66 pç.JPG'}
+						]
+					},
+					{
+						id: 'CIRURGIA VASCULAR 1cx',
+						title: 'Cirurgia Vascular',
+						images: [
+							{title: 'Sonda de Temperatura', name: 'Cx Vascular.JPG'}
+						]
+					},
+					{
+						id: 'COLEDOSCOPIO',
+						title: 'Coledoscópio',
+						images: [
+							{title: 'Sonda de Temperatura', name: 'TOLF5233.JPG'}
+						]
+					},
+					{
+						id: 'CX.MAMA 3cx',
+						title: 'Caixa para Mama',
+						images: [
+							{title: 'Sonda de Temperatura', name: 'Cx Mama.JPG'}
+						]
+					},
+					{
+						id: 'FIMOSE 2cx',
+						title: 'Fimose',
+						images: [
+							{title: 'Caixa para Fimose', name: 'Cx Fimose.JPG'}
+						]
+					},
+					{
+						id: 'FININHO 3cx',
+						title: 'Fininho',
+						images: [
+							{title: 'Sonda de Temperatura', name: 'Cx Fininho 39 pç.JPG'}
+						]
+					},
+					{
+						id: 'MAT. SOLTO CIR',
+						title: 'Material Solto',
+						images: [
+							{title: 'ALLIS', name: 'ALLIS.jpg'},
+							{title: 'SATINSKY', name: 'SATINSKY.JPG'}
+						]
+					},
+					{
+						id: 'PARTES MOLES CIR 12cx',
+						title: 'Partes Moles',
+						images: [
+							{title: 'Sonda de Temperatura', name: 'Cx Partes Moles Cir 30p.JPG'}
+						]
+					},
+					{
+						id: 'TAB. VESICULA LAPAROSCOPICA  5cx',
+						title: 'Vesicula Laparoscopica',
+						images: [
+							{title: 'Cabo de Temperatura', name: 'Material vesicula lap. 8 pç.jpg'},
+							{title: 'Sonda de Temperatura', name: 'Tabuleiro vesicula lap 8 pç.JPG'}
+						]
+					},
+					{
+						id: 'TABULEIRO LONGO',
+						title: 'Tabuleiro Longo',
+						images: [
+							{title: 'Tabuleiro de 11 Peças', name: 'Tabuleiro Mat. Longo 11pç.JPG'}
+						]
+					},
+					{
+						id: 'TIROIDE 4cx',
+						title: 'Tiroide 4 Caixas',
+						images: [
+							{title: 'Caixa Tiroide N 1,2,3 de 37 Peças', name: 'Cx Tiroide  nº 1,2,3 (37 pç).jpg'},
+							{title: 'Sonda de Temperatura', name: 'Cx Tiroide nº4 (36 pç).JPG'}
+						]
+					},
+					{
+						id: 'TORAX 1CX',
+						title: 'Torax 1CX',
+						images: [
+							{title: 'Caixa de 13 Peças', name: 'Cx Torax 13 pc.JPG'}
+						]
+					}
+				]
+			},
+			{
+				id: 'ANESTESIA',
+				title: 'Anestesia',
+				images: [
+					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
+					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
+				]
+			},
+			{
+				id: 'ANESTESIA',
+				title: 'Anestesia',
+				images: [
+					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
+					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
+				]
+			},
+			{
+				id: 'ANESTESIA',
+				title: 'Anestesia',
+				images: [
+					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
+					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
+				]
+			},
+			{
+				id: 'ANESTESIA',
+				title: 'Anestesia',
+				images: [
+					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
+					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
+				]
+			},
+			{
+				id: 'ANESTESIA',
+				title: 'Anestesia',
+				images: [
+					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
+					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
+				]
+			},
+			{
+				id: 'ANESTESIA',
+				title: 'Anestesia',
+				images: [
+					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
+					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
+				]
+			},
+			{
+				id: 'ANESTESIA',
+				title: 'Anestesia',
+				images: [
+					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
+					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
+				]
+			}
+		]
 	},
 	{
 		id: 'MaterialExterno',
