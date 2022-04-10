@@ -1,26 +1,31 @@
 var currFolder = imgData;
+var imagePath = '';
 
-function CreateMenuItem(id, title)
+function StringToColor(str)
 {
-	var listItem = document.createElement('li');
-	var anchor = document.createElement('a');
-
-	// Generate background color for breadcrumb according to text
 	var hash = 0;
 	var colour = '#';
 
-	for (var i = 0; i < title.length; i++)
-	hash = title.charCodeAt(i) + ((hash << 5) - hash);
+	for (var i = 0; i < str.length; i++)
+	hash = str.charCodeAt(i) + ((hash << 5) - hash);
 	
 	for (var i = 0; i < 3; i++) {
 		var value = (hash >> (i * 8)) & 0xFF;
 		colour += ('00' + value.toString(16)).substr(-2);
 	}
 
+	return colour;
+}
+
+function CreateMenuItem(id, title)
+{
+	var listItem = document.createElement('li');
+	var anchor = document.createElement('a');
+
 	anchor.id = id;
 	anchor.href = '#' + id;
 	anchor.innerHTML = title;
-	anchor.style.backgroundColor = colour;
+	anchor.style.borderColor = StringToColor(title);
 	listItem.append(anchor);
 
 	return listItem;
@@ -53,6 +58,19 @@ function Navigate(toFolder) {
 		const itemId 	= item.id.toLowerCase();
 
 		if(itemId === toFolder) {
+			imagePath += item.id + '/';
+
+			// Add nav crumb
+			var breadcrumbs = document.getElementById('breadcrumbs');
+			var crumb = document.createElement('span');
+			crumb.title = item.title;
+			crumb.classList.add('crumb');
+			crumb.textContent = item.title;
+			crumb.style.color = StringToColor(item.title);
+
+			breadcrumbs.append(crumb);
+			breadcrumbs.style.display = 'block';
+
 			// Regenerate the menu for the folders inside the current folder
 			if(item?.folders)
 				GenerateMenu(item.folders);
@@ -63,9 +81,9 @@ function Navigate(toFolder) {
 			if(item?.images) {
 				item.images.forEach(image => {
 					var img = document.createElement('img');
-					// const src = basePath + '/' + image.name;
-					const src = 'https://via.placeholder.com/150?text=' + image.title;
-					// console.log('Image:', src);
+					const src = basePath + '/' + imagePath + image.name;
+					// const src = 'https://via.placeholder.com/150?text=' + image.title;
+					console.log('Image:', src);
 	
 					img.src = src;
 					img.loading = "lazy";
