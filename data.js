@@ -313,56 +313,108 @@ const imgData = [
 				]
 			},
 			{
-				id: 'ANESTESIA',
-				title: 'Anestesia',
+				id: 'CIRURGIA PLASTICA',
+				title: 'Cirurgia Plástica',
+				images: [
+					{title: 'Cabo de Temperatura', name: 'BASE METALICA 3 UNIDADES.jpg'},
+					{title: 'Cabo de Temperatura', name: 'DERMÁTOMO ANTIGO + LAMINAS.jpg'},
+					{title: 'Cabo de Temperatura', name: 'DERMATOMO ELECTRICO.jpg'},
+					{title: 'Cabo de Temperatura', name: 'EXPANSOR DE PELE.jpg'},
+					{title: 'Sonda de Temperatura', name: 'PLACA ALUMINIO (Solta).JPG'}
+				]
+			},
+			{
+				id: 'FOTOS ANTIGAS',
+				title: 'Fotos Antigas',
+				folders: [
+					{
+						id: 'Ambulatorio',
+						title: 'Ambulatório',
+						images: [
+							{title: 'Cabo de Temperatura', name: 'PB100008.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB100009.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB100010.jpg'},
+							{title: 'Sonda de Temperatura', name: 'PB100011.JPG'}
+						]
+					},
+					{
+						id: 'ORL',
+						title: 'ORL',
+						images: [
+							{title: 'Cabo de Temperatura', name: 'ANTIGA.jpg'},
+							{title: 'Cabo de Temperatura', name: 'Endonasal Antiga.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB060002.jpg'},
+							{title: 'Sonda de Temperatura', name: 'PB170016.JPG'}
+						]
+					},
+					{
+						id: 'Ortopedia',
+						title: 'Ortopedia',
+						images: [
+							{title: 'Cabo de Temperatura', name: 'PB060003.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB060004.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB060005.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB110012.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB110013.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB110014.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB110015.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB180020.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB180021.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB180022.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB180023.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB180024.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB180025.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB180026.jpg'},
+							{title: 'Cabo de Temperatura', name: 'PB180028.jpg'},
+							{title: 'Sonda de Temperatura', name: 'PB180029.JPG'}
+						]
+					}
+				]
+			},
+			{
+				id: 'GINECOLOGIA',
+				title: 'Ginecologia',
 				images: [
 					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
 					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
 				]
 			},
 			{
-				id: 'ANESTESIA',
-				title: 'Anestesia',
+				id: 'OBSTETRICIA',
+				title: 'Obstetrícia',
 				images: [
 					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
 					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
 				]
 			},
 			{
-				id: 'ANESTESIA',
-				title: 'Anestesia',
+				id: 'OFTALMOLOGIA',
+				title: 'Oftalmologia',
+				images: [
+					{title: 'Sonda de Temperatura', name: 'CATARATA.JPG'}
+				]
+			},
+			{
+				id: 'ORTOPEDIA',
+				title: 'Ortopedia',
 				images: [
 					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
 					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
 				]
 			},
 			{
-				id: 'ANESTESIA',
-				title: 'Anestesia',
+				id: 'OTORRINO',
+				title: 'Otorrino',
 				images: [
-					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
-					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
+					{title: 'Sonda de Temperatura', name: 'Suporte ORL.JPG'}
+				],
+				folders: [
+
 				]
 			},
 			{
-				id: 'ANESTESIA',
-				title: 'Anestesia',
-				images: [
-					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
-					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
-				]
-			},
-			{
-				id: 'ANESTESIA',
-				title: 'Anestesia',
-				images: [
-					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
-					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
-				]
-			},
-			{
-				id: 'ANESTESIA',
-				title: 'Anestesia',
+				id: 'UROLOGIA',
+				title: 'Urologia',
 				images: [
 					{title: 'Cabo de Temperatura', name: 'Cabo Temperatura.jpg'},
 					{title: 'Sonda de Temperatura', name: 'Sonda Temperatura.JPG'}
