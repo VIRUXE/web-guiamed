@@ -82,6 +82,10 @@ main {
 	justify-content: center;
 }
 
+main p {
+	color: darkgrey;
+}
+
 img {
 	height: 150px;
 	width: 150px;
