@@ -51,25 +51,25 @@ function GenerateMenu(folders)
 
 function Navigate(toFolder) {
 	var current = document.getElementById('current');
-	var previous = document.getElementById('previous');
 
 	for (var index = 0; index < currFolder.length; index++) {
 		const item 		= currFolder[index];
 		const itemId 	= item.id.toLowerCase();
 
 		if(itemId === toFolder) {
-			imagePath += item.id + '/';
-
-			// Add nav crumb
+			// Add navigation crumb
 			var breadcrumbs = document.getElementById('breadcrumbs');
 			var crumb = document.createElement('span');
+			
 			crumb.title = item.title;
 			crumb.classList.add('crumb');
 			crumb.textContent = item.title;
 			crumb.style.color = StringToColor(item.title);
-
+			
 			breadcrumbs.append(crumb);
 			breadcrumbs.style.display = 'block';
+
+			imagePath += item.id + '/'; // Complete the image path
 
 			// Regenerate the menu for the folders inside the current folder
 			if(item?.folders)
@@ -77,7 +77,7 @@ function Navigate(toFolder) {
 			else // Or delete the menu if no folders to go to
 				document.querySelector('nav ul').replaceChildren();
 
-			// Now Show the images in the folders if there are any
+			// Show folder images if there are any
 			if(item?.images) {
 				item.images.forEach(image => {
 					var img = document.createElement('img');
@@ -86,7 +86,7 @@ function Navigate(toFolder) {
 					console.log('Image:', src);
 	
 					img.src = src;
-					img.loading = "lazy";
+					img.loading = "lazy"; // Useless in this case but wtv
 					
 					if(image?.title) img.title = image.title;
 
@@ -105,9 +105,7 @@ function Navigate(toFolder) {
 				})
 			}
 
-			previous.textContent = current.textContent;
 			current.textContent = item.title;
-
 			currFolder = item.folders;
 
 			break;

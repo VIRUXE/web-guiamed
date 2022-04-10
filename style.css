@@ -30,18 +30,11 @@ header {
 	margin-bottom: 10px;
 }
 
-header h1, h2 {
-	display: inline-block;
-}
-
 header h1 {
 	text-transform: uppercase;
 	cursor: pointer;
 	text-decoration: underline;
-}
-
-header h2 {
-	margin-left: 2%;
+	text-align: center;
 }
 
 nav {
