@@ -32,8 +32,6 @@ header {
 
 header h1 {
 	text-transform: uppercase;
-	cursor: pointer;
-	text-decoration: underline;
 	text-align: center;
 }
 
@@ -45,8 +43,6 @@ nav ul {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-
-	margin-bottom: 5px;
 }
 
 nav ul li {
@@ -132,12 +128,27 @@ img {
 	}
 } */
 
-#breadcrumbs
+#topbar
 {
 	display: none;
-	background-color: black;
+	background-color: white;
+	border-bottom: solid 1px lightgrey;
 	padding: 5px;
-	transition: all 1000ms;
+}
+
+#topbar div {
+	display: inline-block;
+}
+
+#back {
+	float: right;
+	cursor: pointer;
+	transition: all 250ms;
+}
+
+#back:hover {
+	font-weight: bolder;
+	margin-right: 10px;
 }
 
 .crumb {
